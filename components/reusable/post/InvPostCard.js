@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import React, { Children, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import InvContainedButton from "../InvContainedButton";
 
 const InvParagraph = ({ children }) => {
   return <p className="text-gray-600 text-base pb-3">{children}</p>;
@@ -33,8 +34,8 @@ const InvPostCard = ({
       >
         {bodyPreview.substring(0, 700) + "..."}
       </ReactMarkdown>
-      <Link className="mt-5 text-blue-600 text-sm" href={`/posts/${slug}`}>
-        Read more
+      <Link href={`/posts/${slug}`} passHref>
+        <InvContainedButton className="mt-5">Read more</InvContainedButton>
       </Link>
     </div>
   );

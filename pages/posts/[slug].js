@@ -3,6 +3,7 @@ import ErrorPage from "next/error";
 import React from "react";
 import Container from "../../components/dumb/Container";
 import ReactMarkdown from "react-markdown";
+import Header from "../../components/smart/Header";
 
 const InvParagraph = ({ children }) => {
   return <p className="text-gray-600 text-base">{children}</p>;
@@ -22,24 +23,27 @@ const SinglePost = ({ post }) => {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <Container>
-      <div className="mb-10">
-        <h1 className="text-3xl text-blue-600 font-bold">{post?.Title}</h1>
-        <h2 className="text-2xl text-blue-500 ">{post?.Subtitle}</h2>
-      </div>
-      <div>
-        <ReactMarkdown
-          components={{
-            p: (props) => <InvParagraph {...props} />,
-            h1: (props) => <InvH1 {...props} />,
-            h2: (props) => <InvH2 {...props} />,
-          }}
-        >
-          {post?.Body}
-        </ReactMarkdown>
-      </div>
-      {/* <pre>{JSON.stringify(post, null, 4)}</pre> */}
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <div className="mb-10">
+          <h1 className="text-3xl text-blue-600 font-bold">{post?.title}</h1>
+          <h2 className="text-2xl text-blue-500 ">{post?.subtitle}</h2>
+        </div>
+        <div>
+          <ReactMarkdown
+            components={{
+              p: (props) => <InvParagraph {...props} />,
+              h1: (props) => <InvH1 {...props} />,
+              h2: (props) => <InvH2 {...props} />,
+            }}
+          >
+            {post?.body}
+          </ReactMarkdown>
+        </div>
+        {/* <pre>{JSON.stringify(post, null, 4)}</pre> */}
+      </Container>
+    </>
   );
 };
 
