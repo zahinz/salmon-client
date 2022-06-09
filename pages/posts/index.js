@@ -8,7 +8,12 @@ const AllPosts = ({ posts }) => {
     <>
       <Header />
       <Container>
-        <div className="mb-10">AllPosts</div>
+        <div className="mb-10 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-gray-600">AllPosts</h2>
+          <h2 className="flex items-center justify-center text-sm text-white bg-blue-700  w-8 h-8 rounded-full">
+            {posts?.length}
+          </h2>
+        </div>
         {posts.map(
           ({ id, title, subtitle, publishedAt, body, slug }, index) => {
             return (

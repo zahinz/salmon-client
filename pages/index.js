@@ -1,6 +1,6 @@
 import Container from "../components/dumb/Container";
-
 import Header from "../components/smart/Header";
+import { useLocalStorage } from "../lib/hooks/useLocalStorage";
 
 export default function Home() {
   return (

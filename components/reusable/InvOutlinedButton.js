@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import LoadingSpinner from "../dumb/LoadingSpinner";
 
-const InvContainedButton = forwardRef(
+const InvOutlinedButton = forwardRef(
   (
     {
       variant,
@@ -29,7 +29,7 @@ const InvContainedButton = forwardRef(
       [children]
     );
 
-    const mainStyles = `flex justify-center items-center px-4 rounded-md bg-blue-600 hover:bg-blue-800 text-white disabled:bg-gray-200 transition ease-in-out `;
+    const mainStyles = `flex justify-center items-center px-4 rounded-md outline outline-2 outline-blue-600 hover:bg-blue-100 text-blue-600 disabled:outline-gray-200 disabled:text-gray-300 disabled:hover:bg-inherit transition ease-in-out `;
 
     const variantStyles = () => {
       switch (variant) {
@@ -58,7 +58,13 @@ const InvContainedButton = forwardRef(
           <button
             ref={buttonRef}
             style={{ width: isLoading && currentWidth }}
-            children={isLoading ? <LoadingSpinner className="h-5" /> : children}
+            children={
+              isLoading ? (
+                <LoadingSpinner className="h-5 fill-blue-600  dark:text-white" />
+              ) : (
+                children
+              )
+            }
             onClick={onClick}
             className={
               mainStyles +
@@ -75,4 +81,4 @@ const InvContainedButton = forwardRef(
   }
 );
 
-export default InvContainedButton;
+export default InvOutlinedButton;

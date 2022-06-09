@@ -1,17 +1,13 @@
+import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React from "react";
+import InvContainedButton from "../reusable/InvContainedButton";
 
 const Header = () => {
   const router = useRouter();
   const { route } = useRouter();
   const routeArray = route?.split("/").filter((el) => el !== "");
-  useEffect(() => {
-    const handleRouteChange = () => {
-      return console.log(route, routeArray);
-    };
-    router.events.on("routeChangeStart", handleRouteChange);
-  }, []);
 
   const borderStyle = "border-b-2 border-blue-500";
 
@@ -27,6 +23,11 @@ const Header = () => {
         <li className={routeArray.includes("posts") ? borderStyle : ""}>
           <Link href="/posts">
             <a className="text-gray-500">Articles</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/admin" passHref>
+            <InvContainedButton variant="small">Sign in</InvContainedButton>
           </Link>
         </li>
       </ul>
