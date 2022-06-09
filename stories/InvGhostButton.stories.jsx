@@ -1,9 +1,9 @@
 import React from "react";
-import InvGhostButton from "../components/reusable/InvGhostButton";
+import InvContainedButton from "../components/reusable/InvContainedButton";
 
 export default {
-  title: "Components/Buttons/InvGhostButton",
-  component: <InvGhostButton />,
+  title: "Components/Buttons/InvContainedButton",
+  component: <InvContainedButton />,
 
   argTypes: {
     children: {
@@ -61,7 +61,7 @@ export default {
   },
 };
 
-const Template = (args) => <InvGhostButton {...args} />;
+const Template = (args) => <InvContainedButton {...args} />;
 
 export const Standard = Template.bind({});
 

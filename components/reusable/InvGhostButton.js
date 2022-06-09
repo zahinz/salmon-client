@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import LoadingSpinner from "../dumb/LoadingSpinner";
 
-const InvOutlinedButton = forwardRef(
+const InvGhostButton = forwardRef(
   (
     {
       variant,
@@ -29,7 +29,7 @@ const InvOutlinedButton = forwardRef(
       [children]
     );
 
-    const mainStyles = `flex justify-center items-center px-4 rounded-md outline outline-2 outline-blue-600 hover:bg-blue-100 text-blue-600 disabled:outline-gray-200 disabled:text-gray-300 disabled:hover:bg-inherit transition ease-in-out `;
+    const mainStyles = `flex justify-center items-center px-4 rounded-md bg-transparent hover:bg-gray-50 text-blue-600 disabled:white-200 disabled:text-gray-200 disabled:hover:bg-white transition ease-in-out `;
 
     const variantStyles = () => {
       switch (variant) {
@@ -81,4 +81,4 @@ const InvOutlinedButton = forwardRef(
   }
 );
 
-export default InvOutlinedButton;
+export default InvGhostButton;

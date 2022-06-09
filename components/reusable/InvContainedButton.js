@@ -57,7 +57,7 @@ const InvContainedButton = forwardRef(
         <a ref={ref} href={href} className={"w-full "}>
           <button
             ref={buttonRef}
-            style={{ width: isLoading && currentWidth }}
+            style={{ width: isLoading && !fullWidth && currentWidth }}
             children={isLoading ? <LoadingSpinner className="h-5" /> : children}
             onClick={onClick}
             className={
