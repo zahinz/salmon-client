@@ -35,7 +35,7 @@ const SignIn = () => {
     <>
       <Header />
       <Container className="flex items-center justify-center" withHeader>
-        <div className="flex flex-col items-start justify-center bg-white h-[350px] w-[500px] p-10 mb-10 rounded-md">
+        <div className="flex flex-col items-start justify-center bg-white w-[500px] p-10 mb-10 rounded-md">
           <p className="text-blue-600 text-2xl font-bold mb-8">
             Welcome salmons.
           </p>
@@ -49,6 +49,7 @@ const SignIn = () => {
           >
             <div className="flex flex-col gap-2 w-full">
               <InvInput
+                disabled
                 label="Email"
                 value={values.identifier}
                 onChange={(e) =>

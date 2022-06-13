@@ -26,7 +26,7 @@ const InvOutlinedButton = forwardRef(
       (node) => {
         setCurrentWidth(`${node?.clientWidth}px`);
       },
-      [children]
+      [children, className, isLoading]
     );
 
     const mainStyles = `flex justify-center items-center px-4 rounded-md outline outline-2 outline-blue-600 hover:bg-blue-100 text-blue-600 disabled:outline-gray-200 disabled:text-gray-300 disabled:hover:bg-inherit transition ease-in-out `;

@@ -26,7 +26,7 @@ const InvContainedButton = forwardRef(
       (node) => {
         setCurrentWidth(`${node?.clientWidth}px`);
       },
-      [children]
+      [children, className, isLoading]
     );
 
     const mainStyles = `flex justify-center items-center px-4 rounded-md bg-blue-600 hover:bg-blue-800 text-white disabled:bg-gray-200 transition ease-in-out `;

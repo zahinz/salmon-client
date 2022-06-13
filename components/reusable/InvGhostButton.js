@@ -26,7 +26,7 @@ const InvGhostButton = forwardRef(
       (node) => {
         setCurrentWidth(`${node?.clientWidth}px`);
       },
-      [children]
+      [children, className, isLoading]
     );
 
     const mainStyles = `flex justify-center items-center px-4 rounded-md bg-transparent hover:bg-gray-50 text-blue-600 disabled:white-200 disabled:text-gray-200 disabled:hover:bg-white transition ease-in-out `;
